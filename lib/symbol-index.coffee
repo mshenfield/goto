@@ -35,13 +35,7 @@ class SymbolIndex
     @roots = atom.project.getDirectories()
     @getProjectRepositories()
 
-    @ignoredNames = atom.config.get('core.ignoredNames') ? []
-    if typeof @ignoredNames is 'string'
-      @ignoredNames = [ ignoredNames ]
-
     @logToConsole = atom.config.get('goto.logToConsole') ? false
-    @moreIgnoredNames = atom.config.get('goto.moreIgnoredNames') ? ''
-    @moreIgnoredNames = (n for n in @moreIgnoredNames.split(/[, \t]+/) when n?.length)
 
     @noGrammar = {}
     # File extensions that we've found have no grammar.  There are probably a lot of files
